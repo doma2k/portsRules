@@ -11,8 +11,6 @@ while read p; do
 done < "$filename"
 
 rm ports.txt
-
 sudo ufw enable 
 
 
-rm portsEnable.sh
