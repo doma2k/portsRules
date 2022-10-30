@@ -3,6 +3,7 @@
 filename='ports.txt'
 ufw='ufw allow'
 
+sudo apt install lsof
 sudo lsof -i -P -n | grep LISTEN | sed -n 's/.*:\($*\)/\1/p' | grep -Eo "\b[0-9]+\b" >> ports.txt
 
 while read p; do 
@@ -11,4 +12,4 @@ done < "$filename"
 
 rm ports.txt
 
-ufw enable 
+sudo ufw enable 
